@@ -5,7 +5,15 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, blog, work, gallery } from "@/resources";
+import {
+  routes,
+  display,
+  person,
+  about,
+  blog,
+  work,
+  gallery,
+} from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -106,12 +114,31 @@ export const Header = () => {
               suppressHydrationWarning
             >
               {routes["/"] && (
-                // Home navigates directly to the About page.
                 <ToggleButton
                   prefixIcon="home"
-                  href="/about"
-                  selected={pathname === "/about"}
+                  href="/"
+                  selected={pathname === "/"}
                 />
+              )}
+              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+              {routes["/about"] && (
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="person"
+                      href="/about"
+                      label={about.label}
+                      selected={pathname === "/about"}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      prefixIcon="person"
+                      href="/about"
+                      selected={pathname === "/about"}
+                    />
+                  </Row>
+                </>
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {/* About page exists but the about button is intentionally hidden from the menu.
