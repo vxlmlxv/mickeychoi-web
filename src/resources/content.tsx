@@ -1,31 +1,20 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Gallery, Home, Person, Social, Work } from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Mickey",
+  lastName: "Choi",
+  name: `Mickey Choi`,
+  role: "국내유일 미국 IBJJF 전미 주짓수 블랙벨트 챔피언",
   avatar: "/images/avatar.jpg",
   email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  location: "Asia/Seoul", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Korean"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const social: Social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-  },
   {
     name: "LinkedIn",
     icon: "linkedin",
@@ -47,7 +36,7 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+  title: `${person.name}'s Website`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Building bridges between design and code</>,
   featured: {
@@ -83,29 +72,29 @@ const about: About = {
   title: `About – ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
-    display: true,
+    display: false,
     subItems: false,
   },
   avatar: {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
     display: true,
     title: "Introduction",
-    description: (
-      <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
-      </>
-    ),
+    description: [
+      <>국내유일 미국 IBJJF 전미 주짓수 블랙벨트 챔피언</>,
+      <> 국내유일 브라질 주짓수 블랙벨트 5단 한국 최고단</>,
+      <> 브라질 주짓수 레드벨트 10단 힐튼레옹의 직계 블랙벨트</>,
+      <>일본 타니주짓수코리아 엑셀러레이터 / 헤드마스터</>,
+      <>ABIMJJ 국제 브라질 주짓수 지도자 협회 한국회장</>,
+    ],
   },
   work: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Work Experience",
     experiences: [
       {
@@ -114,12 +103,12 @@ const about: About = {
         role: "Senior Design Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Redesigned the UI/UX for the FLY platform, resulting in a 20%
+            increase in user engagement and 30% faster load times.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Spearheaded the integration of AI tools into design workflows,
+            enabling designers to iterate 50% faster.
           </>,
         ],
         images: [
@@ -138,12 +127,12 @@ const about: About = {
         role: "Lead Designer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Developed a design system that unified the brand across multiple
+            platforms, improving design consistency by 40%.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Led a cross-functional team to launch a new product line,
+            contributing to a 15% increase in overall company revenue.
           </>,
         ],
         images: [],
@@ -151,7 +140,7 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Studies",
     institutions: [
       {
@@ -165,7 +154,7 @@ const about: About = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {
@@ -223,7 +212,7 @@ const about: About = {
             height: 9,
           },
         ],
-      },  
+      },
     ],
   },
 };
@@ -255,12 +244,12 @@ const gallery: Gallery = {
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
+      src: "/images/gallery/Legendary_History페이지_사진3.jpg",
       alt: "image",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
+      src: "/images/gallery/미키최페이지_사진2.jpg",
       alt: "image",
       orientation: "vertical",
     },
@@ -270,31 +259,31 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
+      src: "/images/gallery/oremtimes.jpg",
       alt: "image",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
+      src: "/images/gallery/레드벨트3명.jpg",
       alt: "image",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
+      src: "/images/gallery/대표님사진.jpg",
       alt: "image",
       orientation: "horizontal",
     },
+    // {
+    //   src: "/images/gallery/horizontal-4.jpg",
+    //   alt: "image",
+    //   orientation: "horizontal",
+    // },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
+      src: "/images/gallery/Legendary_History페이지_사진2.jpg",
       alt: "image",
       orientation: "vertical",
     },
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, home, about, blog, work, gallery };
