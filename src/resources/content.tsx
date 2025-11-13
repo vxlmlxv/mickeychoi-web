@@ -34,13 +34,13 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "public/main1.jpg",
   label: "Home",
   title: `${person.name}'s Website`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>BERIMBORO FIGHT</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Once UI</strong>{" "}
@@ -53,16 +53,17 @@ const home: Home = {
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
-    <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
-    </>
+    // <>
+    //   I'm Selene, a design engineer at{" "}
+    //   <Logo
+    //     dark
+    //     icon="/trademarks/wordmark-dark.svg"
+    //     style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
+    //   />
+    //   , where I craft intuitive
+    //   <br /> user experiences. After hours, I build my own projects.
+    // </>
+    <>미키최의 웹사이트입니다.</>
   ),
 };
 
