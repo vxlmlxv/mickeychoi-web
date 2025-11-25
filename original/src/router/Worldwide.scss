@@ -1,0 +1,45 @@
+
+@import '../assets/common.scss';
+
+.worldwide-sub {
+    position: relative;
+    margin-top: 120px;
+
+    .title {
+        display: flex;
+        color: white;
+        @include fontStyle(var(--40px),400,var(--spacingDefalt));
+        padding: 5px;
+        img{
+            width: 40px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 15px;
+        }
+    }
+
+    section {
+        margin-top: 40px;
+        .frame{
+            img{
+                width: 100%;
+            }
+            p {
+                color: white;
+                @include fontStyle(var(--25px),400,var(--spacingDefalt));
+            }
+            ul {
+                margin-top:10px;
+                li{
+                    color: white;
+                    @include fontStyle(var(--25px),400,var(--spacingDefalt));    
+                }
+            }
+            iframe {
+                width: 100% !important;
+                aspect-ratio: 1183 / 665 !important;
+            }
+        }
+    }
+}
+  

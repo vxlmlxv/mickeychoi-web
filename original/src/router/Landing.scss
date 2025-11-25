@@ -1,0 +1,318 @@
+@import '../assets/common.scss';
+
+.home-background {
+    position: relative;
+
+    main {
+        position: relative;
+        margin-top: var(--80px);
+        z-index: 3;
+    }
+
+    section.intro {
+        margin-top: 120px;
+        .frame {
+            .top {
+                margin-bottom: 30px;
+                color: #f0f2fe;
+                @include fontStyle(var(--50px),400,var(--spacingDefalt));
+                display: flex;
+                align-items: center;
+                img{
+                    width: 80px;
+                    padding-right: 15px;
+                }
+            }
+
+            .body {
+                display: flex;
+                flex-direction: row;
+                .left {
+                    margin: auto;
+                    transform: translateX(calc((var(--1680px) - 100vw)/2));
+                    width: 100vw !important;
+                    img {
+                        width: 100vw;
+                        // border-radius: 20px;
+                    }    
+                }
+                // .right {
+                //     width: 32%;
+                //     img{
+                //         padding: 10px;
+                //     }
+                // }
+            }
+        }
+    }
+
+    section.mickeychoi {
+        margin-top: 150px;
+        .frame {
+            .top {
+                margin-bottom: 30px;
+                color: #f0f2fe;
+                @include fontStyle(var(--50px),400,var(--spacingDefalt));
+                display: flex;
+                align-items: center;
+                img{
+                    width: 80px;
+                    padding-right: 15px;
+                }
+            }
+
+            .body {
+                display: flex;
+                color: #f0f2fe;
+                flex-direction: row;
+                .left {
+                    margin-left:auto;
+                    margin-top:auto;
+                    width: 60%;
+                    max-width: 900px;
+                    @include fontStyle(var(--24px),400,var(--spacingDefalt));
+                    padding: 20px;
+
+                }
+                .right {
+                    width: 40%;
+                    margin: auto;
+                    img{
+                        padding: 10px;
+                    }
+                }
+                img {
+                    width: 100%;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+
+
+    section.jiujitsu {
+        margin-top: 150px;
+        .frame {
+            .top {
+                margin-bottom: 30px;
+                color: #f0f2fe;
+                @include fontStyle(var(--50px),400,var(--spacingDefalt));
+                display: flex;
+                align-items: center;
+                img{
+                    width: 80px;
+                    padding-right: 15px;
+                }
+            }
+
+            .body {
+                display: flex;
+                flex-direction: row;
+                .left {
+                    width: 61%;
+
+                }
+                .right {
+                    width: 39%;
+                    img{
+                        padding: 10px;
+                    }
+                }
+                img {
+                    width: 100%;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+
+    section.basic {
+        margin-top: 40px;
+        .frame{
+            img{
+                width: 100%;
+            }
+            p {
+                color: white;
+                @include fontStyle(var(--25px),400,var(--spacingDefalt));
+            }
+            ul {
+                margin-top:10px;
+                li{
+                    color: white;
+                    @include fontStyle(var(--25px),400,var(--spacingDefalt));    
+                }
+            }
+            iframe {
+                width: 100% !important;
+                aspect-ratio: 1183 / 665 !important;
+            }
+        }
+    }
+
+
+
+
+    section.store {
+        margin-top: 150px;
+        .frame {
+            .top {
+                margin-bottom: 30px;
+                color: #f0f2fe;
+                @include fontStyle(var(--50px),400,var(--spacingDefalt));
+                display: flex;
+                align-items: center;
+                img{
+                    width: 80px;
+                    padding-right: 15px;
+                }
+            }
+
+            .body {
+                display: flex;
+                flex-direction: row;
+              
+                .slick-slider {
+                    transform: translateX(calc((100vw - 80px - var(--1680px)) / -2));
+                    width: calc(100vw - 80px);
+                    margin: 0 auto;
+                    padding: 40px 0;
+                    box-sizing: border-box; /* 간격을 포함하여 크기 계산 */
+                }
+                
+                .card {
+                    width: calc(100% - 20px) !important;
+                    display: flex !important;
+                    box-sizing: border-box; /* 간격을 포함하여 크기 계산 */
+                    flex-direction: column;
+                    margin: auto;
+                    justify-content: center; /* Align horizontal */
+                    align-items: center; /* Align vertical */
+                    padding: 40px;
+                    background: rgb(255, 255, 255);
+                    border-radius: 20px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                    h3 {
+                        color:black;
+                        width: 90%;
+                    }
+                }
+                
+                .slick-prev:before,
+                .slick-next:before {
+                    color: f0f2fe;
+                }
+                  
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1680px) { 
+    .home-background {    
+        section.intro {
+            .frame {
+                .body {
+                    .left {
+                        transform: translateX(-8px);
+                    }
+                }
+            }
+        }
+    }
+
+    section.store {
+        .frame {
+            .body {            
+                .slick-slider {
+                    transform: translateX(0) !important;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+@media screen and (max-width: 987px) { 
+    .home-background {
+        // section.intro {
+        //     .frame {
+        //         .body {
+        //             display: flex;
+        //             flex-direction: column;
+        //             .left {
+        //                 transform: translateX(calc((-2vw)));
+        //                 width: 102vw;
+        //             }
+        //             .right {
+        //                 width: 100%;
+        //                 display: flex;
+        //                 flex-direction: row;
+        //                 a {
+        //                     padding: 3px;
+        //                     width: 32%;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        section.mickeychoi {
+            .frame {
+                .body {
+                    display: flex;
+                    flex-direction: column;
+                    .left {
+                        margin-left: 0;
+                        width: 90%;    
+                    }
+                    .right {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        img{
+                            padding: 5px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+    }    
+}
+
+// @media screen and (max-width: 500px) { 
+//     .home-background {
+//         section.intro {
+//             .frame {
+//                 .body {
+//                     display: flex;
+//                     flex-direction: column;
+//                     .left {
+//                         transform: translateX(calc((-2vw)));
+//                         width: 102vw;
+//                     }
+//                     .right {
+//                         width: 100%;
+//                         display: flex;
+//                         flex-direction: column;
+//                         a {
+//                             padding: 0 5px;
+//                             width: 100%;
+//                         }
+//                         img{
+//                             padding: 0 10px;
+//                         }    
+//                     }
+//                 }
+//             }
+//         }
+//     }    
+// }
+

@@ -1,0 +1,15 @@
+{
+  "short_name": "미키최",
+  "name": "안암주짓수, 미키최주짓수, 고려대주짓수, 글로벌 스포츠기업, 트루카프, 베림보로파이트, 주짓수도복코리아, 별내주짓수, 무료주짓수, 대한루타리브레협회, 미키최",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "512x512 192x192 64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,13 @@
+@import '../../assets/common.scss';
+
+.footer {
+    padding-top: 50px;
+    height: 60px;
+    display: flex;
+    @include fontStyle(var(--14px),500,var(--spacingDefalt));
+    color: #f0f2fe;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+
+}
