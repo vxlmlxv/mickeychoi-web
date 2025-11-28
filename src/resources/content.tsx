@@ -1,4 +1,14 @@
-import { About, Blog, Gallery, Home, Person, Social, Work } from "@/types";
+import type {
+  About,
+  Blog,
+  Gallery,
+  Home,
+  KUBJJ,
+  Legitimacy,
+  Person,
+  Social,
+  Work,
+} from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -16,19 +26,24 @@ const social: Social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/berimbolo_fight",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "YouTube",
+    icon: "youtube",
+    link: "https://www.youtube.com/@linebreakorea",
   },
   {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${person.email}`,
+    name: "Facebook",
+    icon: "facebook",
+    link: "https://www.facebook.com/linebreak1",
+  },
+  {
+    name: "Store",
+    icon: "store",
+    link: "https://m.smartstore.naver.com/truecalf",
   },
 ];
 
@@ -36,8 +51,9 @@ const home: Home = {
   path: "/",
   image: "public/main1.jpg",
   label: "Home",
-  title: `${person.name}'s Website`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  title: "미키최",
+  description:
+    "안암주짓수, 미키최주짓수, 고려대주짓수, 글로벌 스포츠기업, 트루카프, 베림보로파이트, 주짓수도복코리아, 별내주짓수, 무료주짓수, 대한루타리브레협회, 미키최",
   headline: <>BERIMBORO FIGHT</>,
   featured: {
     display: false,
@@ -241,50 +257,108 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  // Legendary History and achievement gallery
   images: [
     {
+      src: "/images/gallery/Legendary_History페이지_사진1.jpg",
+      alt: "Legendary History - Mickey Choi",
+      orientation: "horizontal",
+    },
+    {
       src: "/images/gallery/Legendary_History페이지_사진3.jpg",
-      alt: "image",
+      alt: "Legendary History - Competition",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/미키최페이지_사진2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/oremtimes.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/레드벨트3명.jpg",
-      alt: "image",
+      alt: "Mickey Choi - Champion",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/대표님사진.jpg",
-      alt: "image",
+      alt: "Mickey Choi - Profile",
       orientation: "horizontal",
     },
-    // {
-    //   src: "/images/gallery/horizontal-4.jpg",
-    //   alt: "image",
-    //   orientation: "horizontal",
-    // },
+    {
+      src: "/images/gallery/oremtimes.jpg",
+      alt: "Orem Times Feature",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/레드벨트3명.jpg",
+      alt: "Red Belt Masters",
+      orientation: "vertical",
+    },
     {
       src: "/images/gallery/Legendary_History페이지_사진2.jpg",
-      alt: "image",
+      alt: "Legendary History - Achievement",
       orientation: "vertical",
     },
   ],
 };
 
-export { person, social, home, about, blog, work, gallery };
+const mickeychoi: Work = {
+  path: "/mickeychoi",
+  label: "미키최",
+  title: `미키최 – ${person.name}`,
+  description: `${person.name}에 대해 알아보세요`,
+};
+
+const legendaryhistory: Work = {
+  path: "/legendaryhistory",
+  label: "Legendary History",
+  title: `Legendary History – ${person.name}`,
+  description: "미키최의 전설적인 역사",
+};
+
+const abimjj: Work = {
+  path: "/ABIMJJ",
+  label: "국제주짓수지도자협회",
+  title: `국제주짓수지도자협회 – ${person.name}`,
+  description: "ABIMJJ 국제 브라질 주짓수 지도자 협회",
+};
+
+const worldwide: Work = {
+  path: "/worldwide",
+  label: "Worldwide",
+  title: `Worldwide – ${person.name}`,
+  description: "글로벌 네트워크와 파트너십",
+};
+
+const sponsoredby: Work = {
+  path: "/sponsoredby",
+  label: "Sponsored by",
+  title: `Sponsored by – ${person.name}`,
+  description: "후원사 및 파트너",
+};
+
+const kubjj: KUBJJ = {
+  path: "/KUBJJ",
+  label: "KUBJJ",
+  title: `KUBJJ – ${person.name}`,
+  description: "고려대학교 주짓수 동아리",
+};
+
+const legitimacy: Legitimacy = {
+  path: "/legitimacy",
+  label: "Legitimacy",
+  title: `Legitimacy – ${person.name}`,
+  description: "블랙벨트 계보 및 정통성",
+};
+
+export {
+  person,
+  social,
+  home,
+  about,
+  blog,
+  work,
+  gallery,
+  mickeychoi,
+  legendaryhistory,
+  abimjj,
+  worldwide,
+  sponsoredby,
+  kubjj,
+  legitimacy,
+};

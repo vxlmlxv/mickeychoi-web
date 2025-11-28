@@ -9,12 +9,10 @@ import {
   Row,
   Schema,
   Meta,
-  Line,
+  Flex,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
-import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
+import { home, about, person, baseURL } from "@/resources";
+import Image from "next/image";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -28,7 +26,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
+    <Column maxWidth="xl" gap="xl" paddingY="l" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -42,66 +40,62 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
-          {home.featured.display && (
-            <RevealFx
-              fillWidth
-              horizontal="center"
-              paddingTop="16"
-              paddingBottom="32"
-              paddingLeft="12"
-            >
-              <Badge
-                background="brand-alpha-weak"
-                paddingX="12"
-                paddingY="4"
-                onBackground="neutral-strong"
-                textVariant="label-default-s"
-                arrow={false}
-                href={home.featured.href}
-              >
-                <Row paddingY="2">{home.featured.title}</Row>
-              </Badge>
-            </RevealFx>
-          )}
-          <RevealFx
-            translateY="4"
+
+      {/* Hero Section with Main Image */}
+      <Column fillWidth horizontal="center" gap="l">
+        <RevealFx translateY="4" fillWidth>
+          <Column
             fillWidth
             horizontal="center"
-            paddingBottom="16"
+            align="center"
+            radius="l"
+            style={{ overflow: "hidden" }}
           >
-            <Heading wrap="balance" variant="display-strong-l">
+            <Image
+              src="/main1.jpg"
+              alt="Mickey Choi - BERIMBORO FIGHT"
+              width={1920}
+              height={1080}
+              priority
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+              }}
+            />
+          </Column>
+        </RevealFx>
+      </Column>
+
+      {/* <Column maxWidth="m" horizontal="center" align="center" gap="m">
+          <RevealFx translateY="4" delay={0.2} fillWidth horizontal="center">
+            <Heading
+              wrap="balance"
+              variant="display-strong-l"
+              align="center"
+            >
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx
-            translateY="8"
-            delay={0.2}
-            fillWidth
-            horizontal="center"
-            paddingBottom="32"
-          >
+
+          <RevealFx translateY="8" delay={0.3} fillWidth horizontal="center">
             <Text
               wrap="balance"
               onBackground="neutral-weak"
-              variant="heading-default-xl"
+              variant="heading-default-l"
+              align="center"
             >
               {home.subline}
             </Text>
-          </RevealFx>
-          <RevealFx
-            paddingTop="12"
-            delay={0.4}
-            horizontal="center"
-            paddingLeft="12"
-          >
+          </RevealFx> */}
+
+      {/* <RevealFx paddingTop="m" delay={0.4} horizontal="center">
             <Button
               id="about"
               data-border="rounded"
               href={about.path}
               variant="secondary"
-              size="m"
+              size="l"
               weight="default"
               arrowIcon
             >
@@ -114,45 +108,95 @@ export default function Home() {
                     size="m"
                   />
                 )}
-                {about.title}
+                About Mickey Choi
               </Row>
             </Button>
           </RevealFx>
         </Column>
-      </Column>
-      <div style={{ display: "none" }} aria-hidden>
-        <RevealFx translateY="16" delay={0.6}>
-          <Projects range={[1, 1]} />
-        </RevealFx>
-      </div>
-      {routes["/blog"] && (
-        <div style={{ display: "none" }} aria-hidden>
-          <Column fillWidth gap="24" marginBottom="l">
-            <Row fillWidth paddingRight="64">
-              <Line maxWidth={48} />
-            </Row>
-            <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-              <Row flex={1} paddingLeft="l" paddingTop="24">
-                <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                  Latest from the blog
-                </Heading>
-              </Row>
-              <Row flex={3} paddingX="20">
-                <Posts range={[1, 2]} columns="2" />
-              </Row>
-            </Row>
-            <Row fillWidth paddingLeft="64" horizontal="end">
-              <Line maxWidth={48} />
-            </Row>
-          </Column>
-        </div>
-      )}
-      <div style={{ display: "none" }} aria-hidden>
-        <Projects range={[2]} />
-      </div>
-      <div style={{ display: "none" }} aria-hidden>
-        <Mailchimp />
-      </div>
+      </Column> */}
+
+      {/* TrueCalf Video Section */}
+      <RevealFx translateY="16" delay={0.5} fillWidth>
+        <Column fillWidth horizontal="center" gap="m">
+          <Heading variant="heading-strong-l" align="center">
+            트루카프 카프가드 크리에이티브 디렉터
+          </Heading>
+          <Flex
+            fillWidth
+            horizontal="center"
+            radius="l"
+            style={{
+              overflow: "hidden",
+              aspectRatio: "16/9",
+              maxWidth: "1183px",
+            }}
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/5Arv_c1DeuQ"
+              title="트루카프 카프가드 크리에이티브 디렉터 미키최"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{ border: "none" }}
+            />
+          </Flex>
+        </Column>
+      </RevealFx>
+
+      {/* Orem Times Featured Image */}
+      <RevealFx translateY="16" delay={0.6} fillWidth>
+        <Column
+          fillWidth
+          horizontal="center"
+          radius="l"
+          style={{ overflow: "hidden", maxWidth: "1200px" }}
+        >
+          <Image
+            src="/resources/oremtimes.jpg"
+            alt="Orem Times Feature"
+            width={1200}
+            height={800}
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+            }}
+          />
+        </Column>
+      </RevealFx>
+
+      {/* Free Jiu-Jitsu Video Section */}
+      <RevealFx translateY="16" delay={0.7} fillWidth>
+        <Column fillWidth horizontal="center" gap="m">
+          <Heading variant="heading-strong-l" align="center">
+            무료주짓수 별내주짓수
+          </Heading>
+          <Flex
+            fillWidth
+            horizontal="center"
+            radius="l"
+            style={{ overflow: "hidden", maxWidth: "470px" }}
+          >
+            <iframe
+              width="470"
+              height="836"
+              src="https://www.youtube.com/embed/7GEmQnhg77o"
+              title="무료주짓수 별내주짓수 별내동주짓수 베림보로파이트 미키최"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{
+                border: "none",
+                width: "100%",
+                height: "auto",
+                aspectRatio: "470/836",
+              }}
+            />
+          </Flex>
+        </Column>
+      </RevealFx>
     </Column>
   );
 }
