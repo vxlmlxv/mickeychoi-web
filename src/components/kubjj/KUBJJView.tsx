@@ -370,7 +370,7 @@ export default function KUBJJView() {
           className={styles.ctaSection}
         >
           <Image
-            src="/KUBJJ_images/MICKEYCHOIGR_LOGO.png"
+            src="/resources/미키최그룹_로고.jpg"
             alt="Mickey Choi GR Logo"
             width={120}
             height={120}
