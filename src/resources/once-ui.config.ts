@@ -18,10 +18,17 @@ const baseURL: string = "https://demo.magic-portfolio.com";
 
 const routes: RoutesConfig = {
   "/": true,
+  "/mickeychoi": true,
+  "/legendaryhistory": true,
+  "/ABIMJJ": true,
+  "/KUBJJ": true,
+  "/legitimacy": true,
+  "/worldwide": true,
+  "/sponsoredby": true,
+  "/gallery": true,
   "/about": true,
   "/work": true,
   "/blog": true,
-  "/gallery": true,
 };
 
 const display: DisplayConfig = {
@@ -75,8 +82,8 @@ const fonts: FontsConfig = {
 const style: StyleConfig = {
   theme: "system", // dark | light | system
   neutral: "gray", // sand | gray | slate | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  brand: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: "violet", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative
@@ -188,9 +195,9 @@ const mailchimp: MailchimpConfig = {
 const schema: SchemaConfig = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
+  name: "미키최",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "example@gmail.com",
 };
 
 // social links

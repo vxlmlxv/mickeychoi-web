@@ -1,5 +1,11 @@
 import { IconName } from "@/resources/icons";
 import { zones } from "tzdata";
+import {
+  worldwide,
+  sponsoredby,
+  // Remove or fix the typo - check @/resources for the correct export name
+  // kubjj,
+} from "@/resources";
 
 /**
  * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
@@ -223,3 +229,15 @@ export interface Gallery extends BasePageConfig {
     orientation: string;
   }>;
 }
+
+/**
+ * KUBJJ page configuration.
+ * @description Configuration for the KUBJJ page, including metadata and navigation label.
+ */
+export interface KUBJJ extends BasePageConfig {}
+
+/**
+ * Legitimacy page configuration.
+ * @description Configuration for the Legitimacy page, including metadata and navigation label.
+ */
+export interface Legitimacy extends BasePageConfig {}

@@ -3,7 +3,14 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
+import {
+  Fade,
+  Flex,
+  Line,
+  Row,
+  ToggleButton,
+  Button,
+} from "@once-ui-system/core";
 
 import {
   routes,
@@ -13,6 +20,13 @@ import {
   blog,
   work,
   gallery,
+  mickeychoi,
+  legendaryhistory,
+  abimjj,
+  worldwide,
+  sponsoredby,
+  kubjj,
+  legitimacy,
 } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
@@ -55,11 +69,143 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (pathname) {
+      setIsMenuOpen(false);
+    }
+  }, [pathname]);
+
+  const renderNavItems = (isMobile: boolean) => (
+    <>
+      {routes["/mickeychoi"] && (
+        <>
+          {!isMobile && (
+            <Line background="neutral-alpha-medium" vert maxHeight="24" />
+          )}
+          <ToggleButton
+            href="/mickeychoi"
+            label={mickeychoi.label}
+            selected={pathname === "/mickeychoi"}
+          />
+        </>
+      )}
+      {routes["/legendaryhistory"] && (
+        <>
+          {!isMobile && (
+            <Line background="neutral-alpha-medium" vert maxHeight="24" />
+          )}
+          <ToggleButton
+            href="/legendaryhistory"
+            label={legendaryhistory.label}
+            selected={pathname === "/legendaryhistory"}
+          />
+        </>
+      )}
+      {routes["/ABIMJJ"] && (
+        <>
+          {!isMobile && (
+            <Line background="neutral-alpha-medium" vert maxHeight="24" />
+          )}
+          <ToggleButton
+            href="/ABIMJJ"
+            label={abimjj.label}
+            selected={pathname === "/ABIMJJ"}
+          />
+        </>
+      )}
+      {routes["/KUBJJ"] && (
+        <>
+          {!isMobile && (
+            <Line background="neutral-alpha-medium" vert maxHeight="24" />
+          )}
+          <ToggleButton
+            href="/KUBJJ"
+            label={kubjj.label}
+            selected={pathname === "/KUBJJ"}
+          />
+        </>
+      )}
+      {routes["/legitimacy"] && (
+        <>
+          {!isMobile && (
+            <Line background="neutral-alpha-medium" vert maxHeight="24" />
+          )}
+          <ToggleButton
+            href="/legitimacy"
+            label={legitimacy.label}
+            selected={pathname === "/legitimacy"}
+          />
+        </>
+      )}
+      {routes["/worldwide"] && (
+        <>
+          {!isMobile && (
+            <Line background="neutral-alpha-medium" vert maxHeight="24" />
+          )}
+          <ToggleButton
+            href="/worldwide"
+            label={worldwide.label}
+            selected={pathname === "/worldwide"}
+          />
+        </>
+      )}
+      {routes["/sponsoredby"] && (
+        <>
+          {!isMobile && (
+            <Line background="neutral-alpha-medium" vert maxHeight="24" />
+          )}
+          <ToggleButton
+            href="/sponsoredby"
+            label={sponsoredby.label}
+            selected={pathname === "/sponsoredby"}
+          />
+        </>
+      )}
+      {/* {routes["/gallery"] && (
+        <>
+          {!isMobile && (
+            <Line background="neutral-alpha-medium" vert maxHeight="24" />
+          )}
+          <ToggleButton
+            prefixIcon="gallery"
+            href="/gallery"
+            label={gallery.label}
+            selected={pathname.startsWith("/gallery")}
+          />
+        </>
+      )} */}
+      {/* External Links */}
+      {!isMobile && (
+        <Line background="neutral-alpha-medium" vert maxHeight="24" />
+      )}
+      <Button
+        href="https://naver.me/FhUOaScp"
+        target="_blank"
+        variant="tertiary"
+        size="s"
+      >
+        미키최무료주짓수(KU)
+      </Button>
+      {!isMobile && (
+        <Line background="neutral-alpha-medium" vert maxHeight="24" />
+      )}
+      <Button
+        href="https://m.place.naver.com/place/887437471/home?entry=pll"
+        target="_blank"
+        variant="tertiary"
+        size="s"
+      >
+        미키최무료주짓수(별내)
+      </Button>
+    </>
+  );
 
   return (
     <>
       <Fade
-        s={{ hide: true }}
+        l={{ hide: true }}
         fillWidth
         position="fixed"
         height="80"
@@ -67,7 +213,7 @@ export const Header = () => {
       />
       <Fade
         hide
-        s={{ hide: false }}
+        l={{ hide: false }}
         fillWidth
         position="fixed"
         bottom="0"
@@ -85,7 +231,7 @@ export const Header = () => {
         padding="8"
         horizontal="center"
         data-border="rounded"
-        s={{
+        l={{
           position: "fixed",
         }}
       >
@@ -95,7 +241,7 @@ export const Header = () => {
           vertical="center"
           textVariant="body-default-s"
         >
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
+          {display.location && <Row l={{ hide: true }}>{person.location}</Row>}
         </Row>
         <Row fillWidth horizontal="center">
           <Row
@@ -106,7 +252,19 @@ export const Header = () => {
             padding="4"
             horizontal="center"
             zIndex={1}
+            style={{ position: "relative" }}
           >
+            {/* Mobile Menu Drawer */}
+            <Flex
+              className={`${styles.mobileMenu} ${
+                isMenuOpen ? styles.open : ""
+              }`}
+              direction="column"
+            >
+              {renderNavItems(true)}
+              {display.themeSwitcher && <ThemeToggle />}
+            </Flex>
+
             <Row
               gap="4"
               vertical="center"
@@ -120,92 +278,30 @@ export const Header = () => {
                   selected={pathname === "/"}
                 />
               )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
-              {routes["/about"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      label={about.label}
-                      selected={pathname === "/about"}
+
+              {/* Desktop Navigation */}
+              <Row l={{ hide: true }} gap="4" vertical="center">
+                {renderNavItems(false)}
+                {display.themeSwitcher && (
+                  <>
+                    <Line
+                      background="neutral-alpha-medium"
+                      vert
+                      maxHeight="24"
                     />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      selected={pathname === "/about"}
-                    />
-                  </Row>
-                </>
-              )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
-              {/* About page exists but the about button is intentionally hidden from the menu.
-                  We keep the route and page intact, but don't render a nav button for it. */}
-              {routes["/work"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      label={work.label}
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                </>
-              )}
-              {routes["/blog"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="book"
-                      href="/blog"
-                      label={blog.label}
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="book"
-                      href="/blog"
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                </>
-              )}
-              {routes["/gallery"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      label={gallery.label}
-                      selected={pathname.startsWith("/gallery")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      selected={pathname.startsWith("/gallery")}
-                    />
-                  </Row>
-                </>
-              )}
-              {display.themeSwitcher && (
-                <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
-                  <ThemeToggle />
-                </>
-              )}
+                    <ThemeToggle />
+                  </>
+                )}
+              </Row>
+
+              {/* Mobile Menu Trigger */}
+              <Row hide l={{ hide: false }}>
+                <ToggleButton
+                  prefixIcon={isMenuOpen ? "close" : "menu"}
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  selected={isMenuOpen}
+                />
+              </Row>
             </Row>
           </Row>
         </Row>
@@ -217,7 +313,7 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex s={{ hide: true }}>
+            <Flex l={{ hide: true }}>
               {display.time && <TimeDisplay timeZone={person.location} />}
             </Flex>
           </Flex>
