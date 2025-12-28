@@ -45,6 +45,11 @@ const social: Social = [
     icon: "store",
     link: "https://m.smartstore.naver.com/truecalf",
   },
+  {
+    name: "Naver Blog",
+    icon: "blog",
+    link: "https://blog.naver.com/linebreakau",
+  },
 ];
 
 const home: Home = {

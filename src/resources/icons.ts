@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import type { IconType } from "react-icons";
 
 import {
   HiArrowUpRight,
@@ -42,8 +42,9 @@ import {
   FaStore,
 } from "react-icons/fa6";
 import { CiMenuBurger } from "react-icons/ci";
+import NaverBlogIcon from "@/components/icons/NaverBlogIcon";
 
-export const iconLibrary: Record<string, IconType> = {
+export const iconLibrary: Record<string, IconType | typeof NaverBlogIcon> = {
   arrowUpRight: HiArrowUpRight,
   arrowRight: HiArrowRight,
   email: HiEnvelope,
@@ -79,6 +80,7 @@ export const iconLibrary: Record<string, IconType> = {
   youtube: TiSocialYoutube,
   store: FaStore,
   menu: CiMenuBurger,
+  blog: NaverBlogIcon,
 };
 
 export type IconLibrary = typeof iconLibrary;

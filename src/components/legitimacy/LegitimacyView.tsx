@@ -1,14 +1,13 @@
 "use client";
 
-import { Column, Heading, Text, RevealFx, Flex } from "@once-ui-system/core";
+import { Column, Heading, Text, RevealFx } from "@once-ui-system/core";
 import Image from "next/image";
-import styles from "./LegitimacyView.module.scss";
 
 export default function LegitimacyView() {
   const content = [
     {
       image: "/legitimacy_images/legitimacy_image1.jpg",
-      title: "블랙벨트 계보",
+      title: "레드벨트 10단 직계 블랙벨트 계보",
       description: "힐튼레옹 → 미키최",
     },
     {
@@ -18,7 +17,7 @@ export default function LegitimacyView() {
     },
     {
       image: "/legitimacy_images/legitimacy_image3.jpg",
-      title: "정통성",
+      title: "블랙벨트 5단 한국 최고단 계보",
       description: "힐튼레옹 → 타카오타니 → 미키최",
     },
     {
@@ -29,7 +28,7 @@ export default function LegitimacyView() {
   ];
 
   return (
-    <Column fillWidth gap="xl" horizontal="center">
+    <Column fillWidth gap="xl" horizontal="center" align="center">
       <RevealFx translateY="4">
         <Heading variant="display-strong-xl" align="center" marginBottom="l">
           Legitimacy
@@ -39,25 +38,36 @@ export default function LegitimacyView() {
       <Column fillWidth gap="32" horizontal="center">
         {content.map((item, index) => (
           <RevealFx key={item.title} translateY="8" delay={index * 0.1}>
-            <div className={styles.alternatingRow}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={800}
-                  height={450}
-                  style={{ objectFit: "cover", width: "100%", height: "auto" }}
-                />
-              </div>
-              <div className={styles.textContainer}>
-                <Heading variant="heading-strong-l" marginBottom="8">
+            <Column fillWidth horizontal="center" gap="m" align="center">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={800}
+                height={450}
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  maxWidth: "800px",
+                  height: "auto",
+                }}
+              />
+              <Column horizontal="center" align="center" gap="s">
+                <Heading
+                  variant="heading-strong-l"
+                  align="center"
+                  marginBottom="8"
+                >
                   {item.title}
                 </Heading>
-                <Text variant="body-default-l" onBackground="neutral-medium">
+                <Text
+                  variant="body-default-l"
+                  onBackground="neutral-medium"
+                  align="center"
+                >
                   {item.description}
                 </Text>
-              </div>
-            </div>
+              </Column>
+            </Column>
           </RevealFx>
         ))}
       </Column>
